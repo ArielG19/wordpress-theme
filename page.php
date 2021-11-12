@@ -1,5 +1,5 @@
 <?php get_header();  ?>
-
+<h1>Hola desde nosotros</h1>
 <?php
 while(have_posts()): the_post();
 ?>

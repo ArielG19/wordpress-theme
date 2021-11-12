@@ -10,3 +10,159 @@ License URI: http://www.gnu.org/license/glp-2.0.html
 Tags: Gym,gimnasio, deporte, sport, css grid, mobile first
 Text Domain: my sport training
 */
+
+/*Definimos un custom property*/
+:root{
+    /*Font*/
+    --titulo_personalizado : 'Roboto', sans-serif;
+    /*Colors*/
+    --color_primario:#ff5b00;
+    --color_secundario:#2f2e2e;
+    --color_buttom:#ebebeb;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /*10 px = 1rem*/
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-size: 16px; /* px fallback */
+    font-size: 1.6rem; /* default font-size for document */
+    line-height: 1.5; /* a nice line-height */
+    font-family: var(--titulo_personalizado);
+  }
+
+h1{
+    font-size: 6rem;
+}
+h2{
+    font-size: 4.8rem;
+}
+h3{
+    font-size: 3.6rem;
+}
+h4{
+    font-size: 2.4rem;
+}
+
+
+header {
+    width: 100%;
+    height: 100vh;
+
+   
+}
+.logo {
+    line-height: 40px;
+    position: fixed;
+    float: left;
+    margin: 10px 46px;
+    color: rgb(36, 33, 33);
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+.logo img{
+    width: 70px;
+ }
+ nav{
+    position: fixed;
+    z-index:1;
+    width: 100%;
+  }
+
+nav ul{
+    list-style: none;
+    background: rgba(0,0,0,0) ;
+    overflow: hidden;
+    color: #fff;
+    padding: 0;
+    padding-right: 60px;
+    text-align: right;
+    margin: 0;
+    transition: 1s;
+  }
+
+  nav.black ul{
+    background: var(--color_secundario);
+  
+  }
+  nav.black ul li a{
+      color:#fff;
+  }
+
+/*estilos al lista*/
+nav ul li{
+    display: inline-block;
+    padding-bottom:20px;
+    padding-top: 20px;
+  
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--color_secundario);
+    font-size: 16px;
+    padding: 10px;/*despegamos un poco las paginas*/
+    font-weight: bold;
+  
+  }
+.menu-icon{
+    width: 100%;
+    background: #000;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 15px 24px;
+    cursor: pointer;
+    color: #fff;
+    display: none;
+  }
+
+@media(max-width: 586px) {
+
+    .logo {
+        position: absolute;
+        top: 0;
+        margin-top: 9px;
+        padding-left: -28px;
+        margin-left: 15px;
+    }
+    nav{
+        position: absolute;
+        z-index:1;
+        width: 100%;
+      }
+   
+    nav ul {
+          max-height: 0px;
+          background: #2a2828;
+    }
+
+    nav.black ul {
+          background: #000;
+    }
+
+    .showing {
+          max-height: 20em;
+    }
+
+    nav ul li{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 2px 0; /*espacio entre las paginas en movil*/
+        text-align: center;
+      }
+      nav ul li a{
+       color: var(--color_buttom);
+       padding-left: 70px;
+       font-size: 14px;
+      }
+
+    .menu-icon {
+          display: block;
+    }
+
+}

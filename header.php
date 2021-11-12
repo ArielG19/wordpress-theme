@@ -5,18 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php wp_head()?>
 </head>
 <body>
     
-<header class="site-header">
-    <div class="contenedor">
-        <div class="barra-navegador">
-            <div class="logo">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="">
-            </div>
-            <nav>
+
+
+<header>
+
+<nav>
+
+      <div class="menu-icon">
+            <i class="fa fa-bars fa-2x"></i>
+      </div>
+
+      <div class="logo">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="">
+
+      </div>
+      <?php
+                    //imprimiendo menu, pasando menu que vamos a usar, y las clases css
+                    $args = array(
+                            'theme_location' => 'menu-principal',
+                            'container' => 'menu-nav',
+                            'container_class' => 'menu-principal'
+                    ); 
                     
-            </nav>
-        </div>
-    </div>
+                    wp_nav_menu($args);
+            
+        ?>
+
+     
+</nav>
+
 </header>
