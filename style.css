@@ -64,6 +64,7 @@ header {
     font-weight: bold;
     font-size: 20px;
     letter-spacing: 2px;
+    z-index: 2;
 }
 .logo img{
     width: 70px;
@@ -88,6 +89,7 @@ nav ul{
 
   nav.black ul{
     background: var(--color_secundario);
+    padding-bottom: 1rem;
   
   }
   nav.black ul li a{
@@ -97,7 +99,7 @@ nav ul{
 /*estilos al lista*/
 nav ul li{
     display: inline-block;
-    padding-bottom:20px;
+    padding-bottom:4px;
     padding-top: 20px;
   
 }
@@ -120,6 +122,52 @@ nav ul li a{
     color: #fff;
     display: none;
   }
+  .menu-principal a{
+      position: relative;
+      z-index: 1;
+  }
+ 
+/*Agregando margen entre los titulos del menu*/
+.menu-principal li{
+    margin-right: 2rem;
+}
+  /*-------------------------------------------------------------------------------------------------------*/
+        /*Agregando barra bajo los enlaces del menu*/
+    .menu-principal .current_page_item{
+            border-bottom: 3px solid var(--color_primario);
+    }
+    /*pseudo-elementos, creamos un relleno de color*/
+    .menu-principal a::before,.menu-principal a::after{
+        position: absolute;
+        content: '';
+        display: block; 
+        width: 100%;
+        height: 50%; /*Tomara la mitad*/
+        background-color: var(--color_primario);
+        z-index: -1;
+        transform: scaleX(0);/*lo ocultamos inicialmente*/
+        transition: transform .6s; /*ejecutamos la inimacion*/
+    }
+    .menu-principal a::before{
+        /*inicia en 0*/
+        top:0;
+        /*Inicia o aparece desde la izquierda*/
+        transform-origin: left;
+    }
+    /*llega a 50%*/
+    .menu-principal a::after{
+        top:50%;
+        /*Inicia o aparece desde la derecha*/
+        transform-origin: right;
+    }
+    /*Nuestra animacion se activa despues de hacer hover desde top*/
+    .menu-principal a:hover::before{
+        transform: scaleX(1);
+    }
+    /*Nuestra animacion se activa despues de hacer hover desde bottom*/
+    .menu-principal a:hover::after{
+        transform: scaleX(1);
+    }
 
 @media(max-width: 586px) {
 
@@ -164,5 +212,6 @@ nav ul li a{
     .menu-icon {
           display: block;
     }
+    
 
 }

@@ -13,7 +13,21 @@ jQuery(function ($) {
         else{
           $('nav').removeClass('black')
         }
-    })
+        });
+        $(window).resize(function(){
+
+          if($(window).width() < 600){
+            //console.log($(window).width());
+            $('nav').removeClass('menu-principal');
+           
+            
+          }else{
+          
+            //console.log($(window).width());
+           
+          }
+        
+        });
 
 	
 });

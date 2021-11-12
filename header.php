@@ -27,7 +27,7 @@
                     //imprimiendo menu, pasando menu que vamos a usar, y las clases css
                     $args = array(
                             'theme_location' => 'menu-principal',
-                            'container' => 'menu-nav',
+                            'container' => 'nav',
                             'container_class' => 'menu-principal'
                     ); 
                     
