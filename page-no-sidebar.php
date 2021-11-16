@@ -1,4 +1,10 @@
-<?php get_header();  ?>
+<?php
+/*
+* Template Name: Plantilla (No Sidebars)
+*/
+    get_header();
+?>
+
 
 
     <main class="content">
@@ -32,7 +38,6 @@
             endwhile;
         ?>
 
-        <?php get_sidebar(); ?>
         <hr>
     </main>
 <?php get_footer();  ?>
