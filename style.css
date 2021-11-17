@@ -155,7 +155,7 @@ nav ul li a{
     text-decoration: none;
     color: var(--color_secundario);
     font-size: 16px;
-    padding: 10px;/*despegamos un poco las paginas*/
+    padding: 8px;/*despegamos un poco las paginas*/
     font-weight: bold;
   
 }
@@ -179,7 +179,7 @@ nav ul li a{
  
 /*Agregando margen entre los titulos del menu*/
 .menu-principal li{
-    margin-right: 2rem;
+    margin-right: 1rem;
 
 }
 
@@ -277,8 +277,16 @@ nav ul li a{
       }
    
     nav ul {
-          max-height: 0px;
-          background: #2a2828;
+        max-height: 0px;
+        background: #2a2828;
+        padding-right: 0px;
+        padding-bottom: 0px;
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
     }
 
     nav.black ul {
@@ -289,17 +297,30 @@ nav ul li a{
           max-height: 20em;
     }
 
-    nav ul li{
-        box-sizing: border-box;
-        width: 100%;
+    nav ul li {
+        display: flex;
+        /* box-sizing: border-box; */
+        /* width: 100%; */
         padding: 2px 0; /*espacio entre las paginas en movil*/
-        text-align: center;
-      }
-      nav ul li a{
-       color: var(--color_buttom);
-       padding-left: 70px;
-       font-size: 14px;
-      }
+        /* text-align: center; */
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    
+    nav ul li a {
+        color: var(--color_buttom);
+        /* padding-left: 70px; */
+        font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        
+    }
 
     .menu-icon {
           display: block;
@@ -317,6 +338,13 @@ nav ul li a{
         max-width: 80%;
         
     }
+    .menu-principal a::before,.menu-principal a::after{
+
+        content: "";
+        display: none;
+        clear: both;
+    }
+   
     
 
 }
