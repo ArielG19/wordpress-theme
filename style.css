@@ -31,14 +31,32 @@ body {
     line-height: 1.5; /* a nice line-height */
     font-family: var(--titulo_personalizado);
 }
-.content {
-    width: 94%;
+
+.contenedor-con-sidebar {
+    width: 96%;
     margin: 4em auto;
-    font-size: 20px;
+    /* font-size: 16px; */
     line-height: 30px;
-    text-align: justify;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: stretch;
+}
+/*------------------Sidebar----------------*/
+.contenido-principal {
+    background: #e69669;
+    flex: 1 0 calc(68% - 2rem);
+}
+.sidebar {
+    background: #ca8383;
+    flex: -1 0 calc(35% - 2rem);
 }
 
+img.imagen-destacada{
+    max-width: 95%;
+    height: auto;
+}
+/*------------------Sidebar----------------*/
 h1{
     font-size: 6rem;
 }
@@ -191,6 +209,9 @@ nav ul li a{
                         /*-----------------Fin del efecto------------------*/
 
 /*------------------------------------------Fin del header------------------------------------------*/
+/*------------------------------------------Inicio del sidebar---------------------------------------*/
+
+/*------------------------------------------Fin del sidebar------------------------------------------*/
 
 /*------------------------------------------Inicio del Footer---------------------------------------*/
 .contenido-footer {
