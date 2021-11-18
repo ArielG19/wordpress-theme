@@ -32,32 +32,63 @@ body {
     font-family: var(--titulo_personalizado);
 }
 
-.contenedor-con-sidebar {
+/*.contenedor-con-sidebar {
     width: 96%;
     margin: 4em auto;
-    /* font-size: 16px; */
     line-height: 30px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: stretch;
+}*/
+.contenedor-con-sidebar {
+    width: 96%;
+    margin: 4em auto;
+    line-height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 /*------------------Inicio Sidebar----------------*/
+/*.contenido-principal {
+    background: #e69669;
+    flex: 1 0 calc(68% - 2rem);
+}*/
+
 .contenido-principal {
     background: #e69669;
     flex: 1 0 calc(68% - 2rem);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
-.sidebar {
+/*.sidebar {
     background: #ca8383;
     flex: -1 0 calc(35% - 2rem);
+}*/
+.sidebar {
+    background: #ca8383;
+    flex: 0 0 calc(34% - 2rem);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
 img.imagen-destacada{
-    max-width: 95%;
+    max-width: 100%;
     height: auto;
 }
 /*------------------Fin Sidebar----------------*/
 
+.text-content {
+    background: #2f2e2e;
+    max-width: 100%;
+    text-align: center;
+}
 
 /*------------------Inicio Sin sidebar----------------*/
 .contenedor.no-sidebar {
@@ -68,10 +99,19 @@ img.imagen-destacada{
     justify-content: center;
     align-items: center;
 }
-.no-sidebar>div.contenido-principal {
+/*.no-sidebar>div.contenido-principal {
     background: chocolate;
     width: 70%;
     text-align: center;
+}*/
+.no-sidebar>div.contenido-principal {
+    background: chocolate;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
 }
 
     
@@ -255,7 +295,7 @@ nav ul li a{
 /*------------------------------------------Inicio del Diseño movil----------------------------------*/
 
 
-@media(max-width: 586px) {
+@media(max-width: 627px) {
 
     .logo {
         position: absolute;
@@ -325,6 +365,24 @@ nav ul li a{
     .menu-icon {
           display: block;
     }
+    /*---Responsive para sidebar y contenido---*/
+    .contenedor-con-sidebar {
+        width: 96%;
+        margin: 4em auto;
+        line-height: 30px;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    .sidebar {
+        background: #ca8383;
+        flex: 0 0 calc(34% - 2rem);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    /*----------------------------------------*/
 
     /*-----------------Footer-----------------*/
     .contenido-footer {
