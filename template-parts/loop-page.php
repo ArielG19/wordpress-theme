@@ -13,10 +13,7 @@
         ?>
 
         <div class="text-content">
-            <?php the_content(); ?>
-            <p>Escrito por: <?php the_author(); ?></p>
-            <p>Fecha: <?php the_date(); ?></p>
-            
+            <?php the_content(); ?> 
             
         </div>
         

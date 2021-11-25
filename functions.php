@@ -1,6 +1,8 @@
 <?php 
 
-//------------------------------Funcion cuando el tema esta activado------------------------------------------------------------------
+//----------------- Consultas reutilizables -----------------------------------------------
+require get_template_directory() . '/inc/queries.php';
+//-----------------Funcion cuando el tema esta activado------------------------------------
 
 function sport_menu_setup(){
     //habilitar imagen destacada
@@ -9,7 +11,7 @@ function sport_menu_setup(){
     add_image_size('square',350,350,true);
     add_image_size('portrait',350,724,true);
     add_image_size('box',400,375,true);
-    add_image_size('medium',700,400,true);
+    add_image_size('box-clase',700,400,true);
     add_image_size('blog',966,644,true);
 }
 
@@ -17,7 +19,7 @@ add_action( 'after_setup_theme', 'sport_menu_setup' );
 
 
 
-//------------------------------Funcion para el menu---------------------------------------------------------------------------------
+//--------------Funcion para el menu---------------------------------------------------------
 //creamos nuestra funcion personalizada para nuestro menu
 function sport_menu(){
 
@@ -38,7 +40,7 @@ add_action('init','sport_menu');
 
 
 
-//------------------------------------script y style (mediante esta funcion cargamos estilos)----------------------------------------
+//----------script y style (mediante esta funcion cargamos estilos)---------------------------
 function sport_scripts_styles(){
     //agregando más archivos de estilo
     wp_enqueue_style('normalize',get_template_directory_uri().'/css/normalize.css',array(),'8.0.1');
