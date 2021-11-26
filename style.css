@@ -279,8 +279,9 @@ nav ul li a{
     width: 100%;
     height: auto;
 }
+
 .card {
-    flex: 0 0 calc(50% - 4rem);
+    flex: 0 0 calc(40% - 0rem);
     position: relative;
     background: aquamarine;
     display: flex;
@@ -288,7 +289,7 @@ nav ul li a{
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 3rem;
-    margin-right: 3rem;
+    margin-right: 4rem;
     align-items: center;
     align-content: space-around;
 }
