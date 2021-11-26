@@ -56,22 +56,23 @@ body {
 
 .sidebar {
     background: #ca8383;
-    flex: 0 0 calc(34% - 2rem);
+    flex: 0 0 calc(30% - 2rem);
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    /* margin-right: 4rem; */
 }
 
 img.imagen-destacada{
-    max-width: 100%;
+    max-width: 70%;
     height: auto;
 }
 /*------------------Fin Sidebar----------------*/
 
 .text-content {
     background: #2f2e2e;
-  
+    max-width: 70%;
     margin: 2rem;
 }
 
