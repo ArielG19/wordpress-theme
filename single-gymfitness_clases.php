@@ -7,7 +7,7 @@
             <?php get_template_part('template-parts/loop-page'); ?>
         </div>
             <!--Cargando sidebar-->
-            <?php get_sidebar(); ?>
+            <?php get_sidebar('clases'); ?>
         
         <hr>
     </main>
