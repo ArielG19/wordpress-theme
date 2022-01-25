@@ -31,14 +31,16 @@
 
                         $size = ($i == 4 || $i == 6 ) ? 'portrait' : 'square';
                         $img_galeria = wp_get_attachment_image_src($id, 'medium') [0]; 
+                        $img_grande = wp_get_attachment_image_src($id, 'medium') [0]; 
                         
                     //echo "<pre>";
                     //var_dump($img_galeria);
                     //echo "</pre>";
                     ?>
-
+                    <!--Agregamos lightbox a la galeria-->
                     <li>
-                        <img src="<?php echo $img_galeria; ?>" style="width:25%; height:auto" alt="imagen">
+                        <a href="<?php echo $img_grande; ?>" data-lightbox="galeria"><img src="<?php echo $img_galeria; ?>" style="width:100%; height:auto" alt="imagen"></a>
+                        
                     </li>
 
                     <?php endforeach; ?>

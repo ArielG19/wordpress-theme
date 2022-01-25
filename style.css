@@ -349,6 +349,30 @@ flex: 0 0 30%;
 }
 /*------------------------------------------Fin Sidebar personalizado-------------------------------*/
 
+/*------------------------------------------Inicio galeria ccs-grid -------------------------------*/
+.galeria-imagenes li{
+    list-style: none;
+    
+}
+.galeria-imagenes{
+    display: grid;
+    grid-template-columns: repeat(3,1fr); /*Tres columnas con una fracion*/
+    grid-template-rows: repeat(3,auto); /* tres filas - rows*/
+    grid-gap: 2rem;
+    width: 80%;
+}
+.galeria-imagenes img{
+    display: block;
+}
+.galeria-imagenes li:nth-child(1){
+    grid-row: 2/4;
+    grid-column: 1/3; /*cambia derecho o izquierda segun num de col*/
+ }
+ 
+
+
+/*------------------------------------------Fin galeria ccs-grid -------------------------------*/
+
 /*------------------------------------------Inicio del Footer---------------------------------------*/
 .contenido-footer {
     background: var(--color_footer);
