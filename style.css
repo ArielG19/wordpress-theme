@@ -244,6 +244,7 @@ nav ul li a{
                         /*-----------------Fin del efecto------------------*/
 
 /*------------------------------------------Fin del header------------------------------------------*/
+
 /*------------------------------------------Inicio del page-clase---------------------------------------*/
 
 .lista-clases {
@@ -312,6 +313,107 @@ nav ul li a{
 
 
 /*------------------------------------------Fin del page-clase--------------------------------------*/
+
+
+
+/*------------------------------------------Inicio page-blog--------------------------------------*/
+.lista-blog {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    
+}
+
+.gradient-blog::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.05) 37%, rgba(0,0,0,0.2) 54%, rgba(0,0,0,0.76) 94%, rgba(0,0,0,0.75) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.05) 37%,rgba(0,0,0,0.2) 54%,rgba(0,0,0,0.76) 94%,rgba(0,0,0,0.75) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.05) 37%,rgba(0,0,0,0.2) 54%,rgba(0,0,0,0.76) 94%,rgba(0,0,0,0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#bf000000',GradientType=0 );
+}
+.img-blog{
+    width: 100%;
+    height: auto;
+}
+
+.card-blog {
+    flex: 0 0 calc(30% - -6rem);
+    position: relative;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+    margin-right: 4rem;
+    align-items: center;
+    align-content: space-around;
+}
+.card-blog .contenido-blog {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: left;
+    z-index: 2;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.title-blog{
+    font-size: 20px;
+}
+.card-blog .contenido-blog a{
+    text-decoration: none;
+    color: #fff;
+}
+.card-blog .contenido-blog a:hover{
+    color: var(--color_primario);
+}
+
+.contenido-blog span{
+    font-size: 12px;
+}
+.card-blog .contenido-blog p {
+    color: var(--color_buttom);
+    line-height: 0.2;
+    font-size: 12px;
+}
+.post-categories {
+    position: absolute;
+    top: 1rem;
+    left: -3rem;
+    z-index: 10;
+    list-style: none;
+    display:flex;
+    
+}
+.post-categories li{
+    margin-right: 1rem;
+    background: var(--color_primario);
+    padding: 0.2rem 1rem;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.post-categories li a{
+    text-decoration: none;
+    color:#fff;
+}
+
+
+/*------------------------------------------Inicio page-blog--------------------------------------*/
+
 
 /*------------------------------------------Inicio Sidebar personalizado----------------------------*/
 .sidebar-personalizado{
@@ -506,5 +608,20 @@ flex: 0 0 30%;
    
     
 
+}
+@media(min-width: 320px) and (max-width:520px) {
+    .card-blog {
+        flex: 0 0 calc(80% - -6rem);
+        position: relative;
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-bottom: 3rem;
+        margin-right: 4rem;
+        align-items: center;
+        align-content: space-around;
+    }
 }
 /*------------------------------------------Fin del diseño movil------------------------------------*/

@@ -20,8 +20,7 @@
       </div>
 
       <div class="logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/coding.png" alt="">
-
+            <img src="<?php echo get_template_directory_uri(); ?>/img/coding.png" alt="">
       </div>
       <?php
                     //imprimiendo menu, pasando menu que vamos a usar, y las clases css

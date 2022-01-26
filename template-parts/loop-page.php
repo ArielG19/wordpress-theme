@@ -1,3 +1,4 @@
+<!--loop custom post-->
 <?php
     while(have_posts()): the_post();
 ?>
