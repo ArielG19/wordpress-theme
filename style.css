@@ -414,6 +414,36 @@ nav ul li a{
 
 /*------------------------------------------Inicio page-blog--------------------------------------*/
 
+/*------------------------------------------inicio Sidebar blo-----------------------------*/
+.widget-blog {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+.widget-blog ul {
+    list-style: none;
+    display: contents;
+}
+.widget-blog a {
+    display: flex;
+    color: #313131;
+    text-decoration: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.widget-blog li.cat-item{
+    background: #0693e3;
+    padding: 0.2rem 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.widget-blog li.cat-item a{
+ color: #fff;
+}
+/*------------------------------------------Fin Sidebar blo-----------------------------*/
 
 /*------------------------------------------Inicio Sidebar personalizado----------------------------*/
 .sidebar-personalizado{
@@ -450,6 +480,7 @@ flex: 0 0 30%;
     padding-left: 2rem;
 }
 /*------------------------------------------Fin Sidebar personalizado-------------------------------*/
+
 
 /*------------------------------------------Inicio galeria ccs-grid -------------------------------*/
 .galeria-imagenes li{

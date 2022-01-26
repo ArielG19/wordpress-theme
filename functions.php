@@ -5,6 +5,10 @@ require get_template_directory() . '/inc/queries.php';
 //-----------------Funcion cuando el tema esta activado------------------------------------
 
 function sport_menu_setup(){
+    //-----Funcion para titulo/ayuda a seo------
+    add_theme_support('title-tag');
+    //-----Funcion para titulo/ayuda a seo------
+    
     //habilitar imagen destacada
     add_theme_support('post-thumbnails');
     //personalizando el tamaño de subida de iamgenes
@@ -22,7 +26,6 @@ add_action( 'after_setup_theme', 'sport_menu_setup' );
 //--------------Funcion para el menu---------------------------------------------------------
 //creamos nuestra funcion personalizada para nuestro menu
 function sport_menu(){
-
     //registramos nuestro menu
     register_nav_menus(array(
         'menu-principal' => __('Menu principal sport', 'my sport training')
