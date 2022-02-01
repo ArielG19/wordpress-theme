@@ -14,6 +14,8 @@ jQuery(function ($) {
           $('nav').removeClass('black')
         }
         });
+
+        //
         $(window).resize(function(){
 
           if($(window).width() < 600){
@@ -28,6 +30,26 @@ jQuery(function ($) {
           }
         
         });
+
+
+
+        //mapa leaflet
+        const lat = $("#lat").val(), lng = $("#lng").val(), adress = $("#address").val();
+
+        //condicion para validar que existan los datos
+        if(lat && lng && adress){
+          var map = L.map('mapa').setView([lat, lng], 13);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            //ping mapa
+            L.marker([lat, lng]).addTo(map)
+                .bindPopup(adress)
+                .openPopup();
+        }
+        
 
 	
 });

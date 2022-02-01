@@ -2,6 +2,7 @@
 
 //----------------- Consultas reutilizables -----------------------------------------------
 require get_template_directory() . '/inc/queries.php';
+require get_template_directory() . '/inc/shortcodes.php';
 //-----------------Funcion cuando el tema esta activado------------------------------------
 
 function sport_menu_setup(){
@@ -55,6 +56,10 @@ function sport_scripts_styles(){
         wp_enqueue_style('lightboxCSS',get_template_directory_uri().'/css/lightbox.min.css',array(),'2.11.2');
     endif;
 
+    if(is_page('contacto')) :
+        wp_enqueue_style('leafletCSS','https://unpkg.com/leaflet@1.7.1/dist/leaflet.css',array(),'1.7.1');
+    endif;
+    
     //cargando estilo cdn
     wp_enqueue_style('GoogleFont','https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap',array(),'1.0.1');
     wp_enqueue_style('Fontawesome','https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',array(),'1.0.1');
@@ -68,6 +73,11 @@ function sport_scripts_styles(){
     if(is_page('galeria')) :
         wp_enqueue_script('lightboxJS',get_template_directory_uri().'/js/lightbox.min.js',array('jquery'),'2.11.2',true);
     endif;
+
+    if(is_page('contacto')) :
+        wp_enqueue_script('leaflet','https://unpkg.com/leaflet@1.7.1/dist/leaflet.js',array(),'1.7.1', true);
+    endif;
+
     wp_enqueue_script('scripts',get_template_directory_uri().'/js/scripts.js',array('jquery'),'3.3.2',true);
     
 
@@ -120,5 +130,34 @@ function gymfitness_widgets(){
     ));
 }
 add_action('widgets_init', 'gymfitness_widgets');
+
+/*Funcion para mostrar imagen banner-acf con css */
+function banner_inicio(){
+    //obtener id pagina principal
+    $front_page_id = get_option('page_on_front');
+    
+    //obtener id de imagen, de la pagina
+    $imagen_id = get_field('imagen_hero',$front_page_id);
+  
+    $imagen = wp_get_attachment_image_src( $imagen_id,'full')[0];
+    //var_dump($imagen);
+    //creamos nuestro codigo css
+    wp_register_style('custom',false);
+    wp_enqueue_style('custom');
+    $imagen_destacada_css = ".header-front {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient( rgba(0,0,0,0.55), rgba(0,0,0,0.55) ),url($imagen);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+    }
+    ";
+
+    wp_add_inline_style('custom',$imagen_destacada_css);
+
+}
+add_action('init','banner_inicio');
 
 ?>
