@@ -8,7 +8,7 @@
     
 </head>
 <body>
-<header>
+<header class="header-pages">
             <nav>
                   <div class="menu-icon">
                         <i class="fa fa-bars fa-2x"></i>

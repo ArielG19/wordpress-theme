@@ -147,7 +147,7 @@ function banner_inicio(){
     $imagen_destacada_css = ".header-front {
         width: 100%;
         height: 100vh;
-        background-image: linear-gradient( rgba(0,0,0,0.55), rgba(0,0,0,0.55) ),url($imagen);
+        background-image: linear-gradient( rgba(0,0,0,0.60), rgba(0,0,0,0.60) ),url($imagen);
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
