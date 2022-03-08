@@ -2,7 +2,7 @@
     
     <div class="seccion-inicio">
         <h1> <?php the_field('titulo_de_seccion'); ?> </h1>
-        <?php the_field('contenido_de_seccion'); ?>
+        <p> <?php the_field('contenido_de_seccion'); ?></p>
     </div>
 
     <div class="seccion-areas">
@@ -40,4 +40,46 @@
             </li>
         </ul>
     </div>
+
+    <section class="clases-inicio">
+        <h1 class="h1-inicio">Nuestras Clases</h1>
+        <?php gym_lista_clases(4); ?>
+        <div class="btn-clases">
+            <a href="<?php echo esc_url(get_permalink(get_page_by_title('clases'))); ?>">Ver todas las clases</a>
+        </div>
+    </section>
+
+    <section class="instructores-inicio">
+        <h1 class="h1-instructores">Nuestros Instructores</h1>
+        <ul class="listado-instructores">
+                <?php 
+                    //consultando los datos de post_type
+                    $datos_post_type = array('post_type' => 'instructores','posts_per_page' =>30);
+                    //trayendo los datos de la bd
+                    $datos_instructores = new WP_Query($datos_post_type);
+                    //imprimimos los datos
+                    while($datos_instructores->have_posts()): $datos_instructores->the_post();
+                ?>
+                        <li class="instructores">
+                            <?php the_post_thumbnail('box',array('class'=>'img-instructor')); ?> 
+                            <h3><?php the_title(); ?></h3>
+                            <?php the_content();?>
+                            <!--imprimimos los campos de acf-->
+                            <div class="especialidades">
+                                <?php
+                                    $especialidades = get_field('especialidad');
+                                    foreach($especialidades as $especialidad):?>
+                                        <span class="etiqueta">
+                                            <?php echo esc_html($especialidad); ?>
+                                        </span>
+                                <?php endforeach;?>
+                            </div>
+                        </li>
+                <?php endwhile; wp_reset_postdata(); ?>
+                    
+
+        </ul>
+        
+     
+    </section>
 <?php get_footer();

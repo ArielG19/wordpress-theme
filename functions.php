@@ -79,6 +79,12 @@ function sport_scripts_styles(){
     endif;
 
     wp_enqueue_script('scripts',get_template_directory_uri().'/js/scripts.js',array('jquery'),'3.3.2',true);
+
+    //esta funcion nos servira para enviar php en un objeto a un archivo js
+    wp_localize_script('scripts','pg',array(
+        //cremos la url para usar ajax, esta la que se usa por defecto para ajax
+        'ajaxurl' => admin_url('admin-ajax.php')
+    ));
     
 
     
@@ -159,5 +165,44 @@ function banner_inicio(){
 
 }
 add_action('init','banner_inicio');
+/*hook para usar ajax, usurios logueados y no logueados*/
+add_action("wp_ajax_nopriv_pgFiltroProductos", "pgFiltroProductos");
+add_action("wp_ajax_pgFiltroProductos", "pgFiltroProductos");
+
+function pgFiltroProductos() {
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => -1,
+        'order'     => 'ASC',
+        'orderby' => 'title',
+    );
+
+    if($_POST['categoria']) {
+        $args['tax_query'] = array(
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' =>  $_POST['categoria']
+            )
+        );
+    }
+
+    $entradasBlog = new WP_Query($args);
+
+    $return = array();
+    if($entradasBlog->have_posts( )) {
+        while ($entradasBlog->have_posts()) {
+            $entradasBlog->the_post();
+
+            $return[] = array(
+                'imagen' => get_the_post_thumbnail( get_the_id( ), 'large' ),
+                'link'   => get_the_permalink( ),
+                'titulo' => get_the_title( )
+            );
+        }
+    }
+    wp_send_json( $return );
+}
+
 
 ?>

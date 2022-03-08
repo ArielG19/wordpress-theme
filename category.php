@@ -4,6 +4,7 @@
             <?php 
                 //obtenemos la categoria actual
                 $categoria_actual = get_queried_object(); 
+                //var_dump($categoria_actual);
             ?>
             <h2>Categoria actual: <?php echo $categoria_actual->name;?></h2>
             

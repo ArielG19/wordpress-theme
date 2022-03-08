@@ -252,18 +252,35 @@ nav ul li a{
     position: relative;
     padding: 4rem;
     padding-top: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
 }
-
+.banner p {
+    max-width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .seccion-inicio {
-    background: #ecf0f1;
+    background: #f5f6fa;
     z-index: 20;
     position: relative;
     padding: 4rem;
     text-align: center;
     padding-bottom: 20rem;
     padding-top: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
+.seccion-inicio p {
+    max-width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .seccion-areas {
     display: flex;
     flex-direction: row;
@@ -289,8 +306,7 @@ nav ul li a{
     content: '';
     background: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60));
     width: 33.3%;
-    height: 50%;
-    padding-bottom: 15rem;
+    padding-bottom: 44.5rem;
     display: block;
     position: absolute;
 }
@@ -300,6 +316,57 @@ nav ul li a{
     color: #fff;
     font-size: 22px;
     z-index: 10;
+}
+.clases-inicio{
+    background: #f5f6fa;
+    padding-top: 10rem;
+}
+
+.h1-inicio {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 4rem;
+    font-size: 3.5rem;
+    color: rgb(255 105 0);
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.btn-clases {
+    text-align: center;
+    padding-bottom: 10rem;
+}
+.btn-clases a {
+    text-decoration: none;
+    background: rgb(255 105 0);
+    color: #fff;
+    padding: 12px 14px 12px 14px;
+}
+/*instructores*/
+.instructores-inicio {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.listado-instructores {
+    display: flex;
+    list-style: none;
+    margin-left: -4rem;
+}
+.instructores {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.img-instructor {
+    width: 90%;
+    height: 40rem;
+    object-fit: cover;
+}
+.instructores p{
+    max-width: 90%;
 }
 /*------------------------------------------fin del front-page(inicio)------------------------------------------*/
 
@@ -335,9 +402,9 @@ nav ul li a{
 }
 
 .card {
-    flex: 0 0 calc(30% - -6rem);
+    /*flex: 0 0 calc(30% - -6rem);*/
+    flex: 0 0 calc(30% - -11rem);
     position: relative;
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -375,6 +442,18 @@ nav ul li a{
 
 
 /*------------------------------------------Inicio page-blog--------------------------------------*/
+/*filtro select-blog*/
+
+.wp-post-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.text-center{
+    position: absolute;
+    margin-top: -19rem;
+    right: 51rem;
+}
 .lista-blog {
     display: flex;
     list-style: none;
@@ -695,21 +774,122 @@ flex: 0 0 30%;
         max-width: 80%;
         
     }
+    /*menu*/
     .menu-principal a::before,.menu-principal a::after{
 
         content: "";
         display: none;
         clear: both;
     }
-   
-    
-
+    /*clases*/
+    .card {
+        /* flex: 0 0 calc(30% - -6rem); */
+        flex: 0 0 calc(30% - -25rem);
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-bottom: 3rem;
+        margin-right: 4rem;
+        align-items: center;
+        align-content: space-around;
+    }
+    /*-------------front-page(inicio)---------------*/
+    .seccion-inicio {
+        background: #f5f6fa;
+        z-index: 20;
+        position: relative;
+        padding: 4rem;
+        text-align: center;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
+    }
+    .banner {
+        color: #fff;
+        text-align: center;
+        position: relative;
+        padding: 4rem;
+        padding-top: 22rem;
+    }.banner h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        text-align: center;
+    }
+    .banner p {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .seccion-inicio p {
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .area img {
+        width: 100%;
+        object-fit: cover;
+        height: 270px;
+    }
+    .area p {
+        position: absolute;
+        margin: 12rem;
+        color: #fff;
+        font-size: 20px;
+        z-index: 10;
+    }
+    .contenedor-areas .area::after {
+        content: '';
+        background: linear-gradient(rgba(0,0,0,0.60),rgba(0,0,0,0.60));
+        width: 33.3%;
+        padding-bottom: 27rem;
+        display: block;
+        position: absolute;
+    }
+    .clases-inicio {
+        background: #f5f6fa;
+        padding-top: 2rem;
+    }
+    .h1-inicio {
+        text-align: center;
+        margin: 0;
+        padding-bottom: 0rem;
+        font-size: 3.5rem;
+        color: rgb(255 105 0);
+        text-transform: uppercase;
+        font-weight: 900;
+    }
+    /*instructores area*/
+    .listado-instructores {
+        display: flex;
+        list-style: none;
+        margin-left: -4rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .instructores p{
+        max-width: 90%;
+    }
 }
-@media(min-width: 320px) and (max-width:520px) {
-    .card-blog {
+@media(min-width: 628px) and (max-width:789px) {
+    /*.card-blog {
         flex: 0 0 calc(80% - -6rem);
         position: relative;
         color: #fff;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-bottom: 3rem;
+        margin-right: 4rem;
+        align-items: center;
+        align-content: space-around;
+    }*/
+    .card {
+        flex: 0 0 calc(30% - -25rem);
+        position: relative;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;

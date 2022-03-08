@@ -30,7 +30,41 @@ jQuery(function ($) {
           }
         
         });
-
+        /*---------------------filtro select ajax----------------------*/
+        $("#categoria-blog").change(function() {
+          $.ajax({
+              url: pg.ajaxurl,
+              method: "POST",
+              data: {
+                  "action": "pgFiltroProductos",
+                  "categoria": $(this).find(':selected').val()
+              },
+              beforeSend: function() {
+                  $("#resultados-productos").html("Cargando...")
+              },
+              success: function(data) {
+                  let html = ''
+                  data.forEach(item => {
+                      html += `
+                          <div class="postBlog">
+                            <div class="lista-postBlog"
+                              <figure>${item.imagen}</figure>
+                              <h4 class="text-center">
+                                  <a href="${item.link}">${item.titulo}</a>
+                              </h4>
+                            </div>
+                          </div>
+                      `
+                  })
+  
+                  $("#resultado-posts").html(html)
+              },
+              error: function(error) {
+                  console.error(error)
+              }
+          })
+      })
+        /*---------------------filtro select ajax----------------------*/
 
 
         //mapa leaflet
