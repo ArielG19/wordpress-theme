@@ -56,6 +56,12 @@ function sport_scripts_styles(){
         wp_enqueue_style('lightboxCSS',get_template_directory_uri().'/css/lightbox.min.css',array(),'2.11.2');
     endif;
 
+   //slider
+    if(is_page('inicio')) :
+        wp_enqueue_style('bxSlider','https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css',array(),'2.11.2');
+    endif;
+
+    //mapa
     if(is_page('contacto')) :
         wp_enqueue_style('leafletCSS','https://unpkg.com/leaflet@1.7.1/dist/leaflet.css',array(),'1.7.1');
     endif;
@@ -70,14 +76,20 @@ function sport_scripts_styles(){
     //primero va a cargar las dependencias, en este caso normalize, y despues nuestros estilos.
     wp_enqueue_style('style',get_stylesheet_uri(),array('normalize','GoogleFont'),'1.0.0');
 
+    //galeria lightbox
     if(is_page('galeria')) :
         wp_enqueue_script('lightboxJS',get_template_directory_uri().'/js/lightbox.min.js',array('jquery'),'2.11.2',true);
     endif;
 
+    //mapa
     if(is_page('contacto')) :
         wp_enqueue_script('leaflet','https://unpkg.com/leaflet@1.7.1/dist/leaflet.js',array(),'1.7.1', true);
     endif;
-
+    //slider
+    if(is_page('inicio')) :
+        wp_enqueue_script('bxSliderJS','https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js',array('jquery'),' 4.2.12', true);
+    endif;
+    //mi js
     wp_enqueue_script('scripts',get_template_directory_uri().'/js/scripts.js',array('jquery'),'3.3.2',true);
 
     //esta funcion nos servira para enviar php en un objeto a un archivo js
@@ -85,8 +97,6 @@ function sport_scripts_styles(){
         //cremos la url para usar ajax, esta la que se usa por defecto para ajax
         'ajaxurl' => admin_url('admin-ajax.php')
     ));
-    
-
     
 }
 add_action('wp_enqueue_scripts','sport_scripts_styles');
@@ -165,6 +175,8 @@ function banner_inicio(){
 
 }
 add_action('init','banner_inicio');
+
+
 /*hook para usar ajax, usurios logueados y no logueados*/
 add_action("wp_ajax_nopriv_pgFiltroProductos", "pgFiltroProductos");
 add_action("wp_ajax_pgFiltroProductos", "pgFiltroProductos");

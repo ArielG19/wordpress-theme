@@ -76,10 +76,29 @@
                             </div>
                         </li>
                 <?php endwhile; wp_reset_postdata(); ?>
-                    
-
         </ul>
-        
-     
+    </section>
+    <section class="testimoniales">
+        <h1>Testimoniales</h1>
+        <div class="contenedor-testimoniales">
+            <ul class="listado-testimoniales">
+                <?php
+                    $data = array(
+                        'post_type' => 'testimoniales',
+                        'posts_per_page' => 10
+                    );
+                    $testimoniales = new WP_Query($data);
+                    while($testimoniales->have_posts()): $testimoniales->the_post();
+                ?>
+                <li class="testimonial">
+                    <blockquote> <?php the_content(); ?> </blockquote>
+                    <div class="testimonial-footer">
+                        <?php the_post_thumbnail('thumbnail'); ?>
+                        <p> <?php the_title(); ?> </p>
+                    </div>
+                </li>
+                <?php endwhile; wp_reset_postdata(); ?>
+            </ul>
+        </div>
     </section>
 <?php get_footer();
